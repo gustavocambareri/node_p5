@@ -1,3 +1,6 @@
+let myColor;
+let colors = ["red", "green", "blue", "yellow"];
+
 //create client connection to socket
 let clientSocket = io();
 
@@ -11,7 +14,7 @@ clientSocket.on("mouseBroadcast", otherMouse);
 
 function otherMouse(dataReceived) {
   fill("red");
-  circle(dataReceived.x, dataReceived.y, 20);
+  square(dataReceived.x, dataReceived.y, 20);
 }
 
 function mouseMoved() {
@@ -19,6 +22,7 @@ function mouseMoved() {
     x: mouseX,
     y: mouseY,
     id: clientSocket.id,
+    color: myColor,
   };
 
   clientSocket.emit("mouseInfo", message);
@@ -26,10 +30,11 @@ function mouseMoved() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
+  myColor = random(colors);
 }
 
 function draw() {
-  fill("black");
+  fill("myColor");
 
   circle(mouseX, mouseY, 30);
   circle(mouseX + 30, mouseY, 30);
