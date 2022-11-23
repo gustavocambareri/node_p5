@@ -21,4 +21,11 @@ io.on("connection", newConnection);
 
 function newConnection(newSocket) {
   console.log(newSocket.id);
+
+  newSocket.on("mouseInfo", mouseReceived);
+
+  function mouseReceived(dataReceived) {
+    console.log(dataReceived);
+    newSocket.broadcast.emit("mouseBroadcast", dataReceived);
+  }
 }
