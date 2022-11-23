@@ -1,0 +1,23 @@
+{
+  "name": "node_p5",
+  "version": "1.0.0",
+  "description": "first group project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocambareri/node_p5.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavocambareri/node_p5/issues"
+  },
+  "homepage": "https://github.com/gustavocambareri/node_p5#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
